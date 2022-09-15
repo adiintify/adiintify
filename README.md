@@ -2,6 +2,9 @@
 <h3 align="center">Senior Security Operations Engineer @Greatlearning</h3>
 
 <p style="text-align: center;">![](Responsibility.gif)<p>
+  <p align="center">
+  <img src="./Responsibility.gif" alt="Sublime's custom image"/>
+</p>
 
 - 🌱 I’m currently learning **JavaScript**
 
