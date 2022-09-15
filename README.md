@@ -3,7 +3,7 @@
 
 - 🌱 I’m currently learning **JavaScript**
 
-- 💬 Ask me about **Application and Cloud Security(AWS)**
+- 💬 Ask me about **AWS CDK, Cloud Security & Application Security**
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
