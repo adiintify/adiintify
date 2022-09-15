@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Aditya Nama</h1>
 <h3 align="center">Senior Security Operations Engineer @Greatlearning</h3>
 
-![](Responsibility.gif)
+<p style="text-align: center;">![](Responsibility.gif)<p>
 
 - 🌱 I’m currently learning **JavaScript**
 
