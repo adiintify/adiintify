@@ -1,6 +1,8 @@
 <h1 align="center">Hi 👋, I'm Aditya Nama</h1>
 <h3 align="center">Senior Security Operations Engineer @Greatlearning</h3>
 
+<iframe src="https://giphy.com/embed/MCZ39lz83o5lC" width="480" height="257" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/MCZ39lz83o5lC">via GIPHY</a></p>
+
 - 🌱 I’m currently learning **JavaScript**
 
 - 💬 Ask me about **Application and Cloud Security(AWS)**
