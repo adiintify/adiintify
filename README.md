@@ -1,9 +1,9 @@
 <h1 align="center">Hi 👋, I'm Aditya Nama</h1>
 <h3 align="center">Senior Security Operations Engineer @Greatlearning</h3>
 
-<p style="text-align: center;">![](Responsibility.gif)<p>
-  <p align="center">
-  <img src="./Responsibility.gif" alt="Sublime's custom image"/>
+<!-- <p style="text-align: center;">![](Responsibility.gif)<p> -->
+ <p align="center">
+  <img src="./Responsibility.gif" alt="Custom Gif"/>
 </p>
 
 - 🌱 I’m currently learning **JavaScript**
