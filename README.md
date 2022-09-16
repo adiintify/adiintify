@@ -18,7 +18,7 @@
 <a href="https://twitter.com/adiintify" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="adiintify" height="30" width="40" /></a>
 <a href="https://linkedin.com/in/adiintify" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="adiintify" height="30" width="40" /></a>
 <a href="https://medium.com/@spoofing" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="@spoofing" height="30" width="40" /></a>
-<a href="https://www.credly.com/users/adityanama/badges" target="blank"><img align="center" src="https://info.credly.com/hs-fs/hubfs/Credly_Logo_Orange_10-Inch.png" alt="adityanama" height="30" width="40" /></a>
+<a href="https://www.credly.com/users/adityanama/badges" target="blank"><img align="center" src="https://images.credly.com/size/680x680/images/b685de69-03cf-402c-b8e3-62ecd0e2e949/blob.png" alt="adityanama" height="30" width="40" /></a>
 </p>
 
 <h3 align="left">Languages and Tools:</h3>
