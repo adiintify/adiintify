@@ -7,10 +7,10 @@
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
+- [Deploying a CloudFront WAF with AWS CDK and Typescript](https://spoofing.medium.com/deploying-a-cloudfront-waf-with-typescript-and-aws-cdk-e35df6d7d00c?source=rss-f81a86e26f17------2)
 - [Exploiting CVE-2019–5418- File Content Disclosure on Rails](https://spoofing.medium.com/exploiting-cve-2019-5418-file-content-disclosure-on-rails-58cfa488fb51?source=rss-f81a86e26f17------2)
 - [NCIIPC — Responsible Vulnerability Disclosure Program](https://spoofing.medium.com/nciipc-responsible-vulnerability-disclosure-program-c94d69267517?source=rss-f81a86e26f17------2)
 - [How to make a simple HTTP server using python?](https://spoofing.medium.com/how-to-make-a-simple-http-server-using-python-ea35f0b741a4?source=rss-f81a86e26f17------2)
-- [Account Takeover using Update Password functionality + Weak Password Policy](https://spoofing.medium.com/account-takeover-using-update-password-functionality-weak-password-policy-ab5190bc3827?source=rss-f81a86e26f17------2)
 <!-- BLOG-POST-LIST:END -->
 
 <h3 align="left">Connect with me:</h3>
