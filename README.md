@@ -7,10 +7,10 @@
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
+- [Deploying an AWS Client VPN endpoint with AWS CDK and Typescript](https://spoofing.medium.com/deploying-an-aws-client-vpn-endpoint-with-aws-cdk-and-typescript-355f9db60a9d?source=rss-f81a86e26f17------2)
 - [Deploying applications to ECS Fargate with AWS CDK and Typescript](https://spoofing.medium.com/deploying-applications-to-ecs-fargate-with-aws-cdk-and-typescript-c0b5acdcb1d7?source=rss-f81a86e26f17------2)
 - [Deploying a CloudFront WAF with AWS CDK and Typescript](https://spoofing.medium.com/deploying-a-cloudfront-waf-with-typescript-and-aws-cdk-e35df6d7d00c?source=rss-f81a86e26f17------2)
 - [Exploiting CVE-2019–5418- File Content Disclosure on Rails](https://spoofing.medium.com/exploiting-cve-2019-5418-file-content-disclosure-on-rails-58cfa488fb51?source=rss-f81a86e26f17------2)
-- [NCIIPC — Responsible Vulnerability Disclosure Program](https://spoofing.medium.com/nciipc-responsible-vulnerability-disclosure-program-c94d69267517?source=rss-f81a86e26f17------2)
 <!-- BLOG-POST-LIST:END -->
 
 <h3 align="left">Connect with me:</h3>
