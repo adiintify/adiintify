@@ -8,7 +8,6 @@
 ### Blogs posts
 
 <!-- BLOG-POST-LIST:START -->
-
 - [Deploying AWS Client VPN endpoint with AWS CDK and Typescript](https://spoofing.medium.com/deploying-an-aws-client-vpn-endpoint-with-aws-cdk-and-typescript-355f9db60a9d?source=rss-f81a86e26f17------2)
 - [Deploying applications to ECS Fargate with AWS CDK and Typescript](https://spoofing.medium.com/deploying-applications-to-ecs-fargate-with-aws-cdk-and-typescript-c0b5acdcb1d7?source=rss-f81a86e26f17------2)
 - [Deploying a CloudFront WAF with AWS CDK and Typescript](https://spoofing.medium.com/deploying-a-cloudfront-waf-with-typescript-and-aws-cdk-e35df6d7d00c?source=rss-f81a86e26f17------2)
