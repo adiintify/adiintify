@@ -1,6 +1,6 @@
 <h1 align="center">Hi 👋, I'm Aditya Nama</h1>
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=500&pause=1000&color=9E1547&center=true&vCenter=true&width=435&lines=Senior+Security+Engineer+%40Nykaa" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=500&pause=1000&color=9E1547&vCenter=true&width=435&lines=Senior+Security+Engineer+%40Nykaa" alt="Typing SVG" /></a>
 
 - 🌱 I’m currently learning **Everything About Security!**
 
@@ -9,6 +9,7 @@
 ### Medium Blogs posts
 
 <!-- BLOG-POST-LIST:START -->
+
 - [AWS Config, Cloud Custodian, or Both?](https://spoofing.medium.com/aws-config-cloud-custodian-or-both-98908e0b24ea?source=rss-f81a86e26f17------2)
 - [Deploying an AWS S3 static site to use Cloudflare WAF](https://spoofing.medium.com/deploying-an-aws-s3-static-site-to-use-cloudflare-waf-f2211934ca6f?source=rss-f81a86e26f17------2)
 - [Deploying AWS Client VPN endpoint with AWS CDK and Typescript](https://spoofing.medium.com/deploying-an-aws-client-vpn-endpoint-with-aws-cdk-and-typescript-355f9db60a9d?source=rss-f81a86e26f17------2)
