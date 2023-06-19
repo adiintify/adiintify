@@ -1,6 +1,6 @@
 <h1 align="center">Hi 👋, I'm Aditya Nama</h1>
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=500&pause=1000&color=9E1547&vCenter=true&width=435&lines=Senior+Security+Engineer+%40Nykaa" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=500&pause=1000&color=9E1547&vCenter=true&width=435&lines=Security+Engineer-+II+%40Nykaa" alt="Typing SVG" /></a>
 
 - 🌱 I’m currently learning **Everything About Security!**
 
