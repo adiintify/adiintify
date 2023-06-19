@@ -1,11 +1,12 @@
 <h1 align="center">Hi 👋, I'm Aditya Nama</h1>
-<h3 align="center">Security Engineer 👨‍💻</h3>
 
-- 🌱 I’m currently learning **JavaScript**
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=500&pause=1000&color=9E1547&center=true&vCenter=true&width=435&lines=Senior+Security+Engineer+%40Nykaa" alt="Typing SVG" /></a>
+
+- 🌱 I’m currently learning **Everything About Security!**
 
 - 💬 Ask me about **AWS CDK, Cloud Security & Application Security**
 
-### Blogs posts
+### Medium Blogs posts
 
 <!-- BLOG-POST-LIST:START -->
 
@@ -18,8 +19,8 @@
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 <a href="https://twitter.com/adiintify" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="adiintify" height="30" width="40" /></a>
-<a href="https://linkedin.com/in/adiintify" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="adiintify" height="30" width="40" /></a>
-<a href="https://medium.com/@spoofing" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="@spoofing" height="30" width="40" /></a>
+<a href="https://www.linkedin.com/in/adiintify/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="adiintify" height="30" width="40" /></a>
+<a href="https://spoofing.medium.com/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="@spoofing" height="30" width="40" /></a>
 <a href="https://www.credly.com/users/adiintify/badges" target="blank"><img align="center" src="https://images.credly.com/size/680x680/images/b685de69-03cf-402c-b8e3-62ecd0e2e949/blob.png" alt="adityanama" height="40" width="40" /></a>
 </p>
 
