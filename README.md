@@ -13,10 +13,10 @@
 ## Medium Blogs posts:
 
 <!-- BLOG-POST-LIST:START -->
+- [Deploying Jenkins using AWS CDK and Typescript](https://spoofing.medium.com/deploying-jenkins-using-aws-cdk-and-typescript-732ec26e10a?source=rss-f81a86e26f17------2)
 - [AWS Config, Cloud Custodian, or Both?](https://spoofing.medium.com/aws-config-cloud-custodian-or-both-98908e0b24ea?source=rss-f81a86e26f17------2)
 - [Deploying an AWS S3 static site to use Cloudflare WAF](https://spoofing.medium.com/deploying-an-aws-s3-static-site-to-use-cloudflare-waf-f2211934ca6f?source=rss-f81a86e26f17------2)
 - [Deploying AWS Client VPN endpoint with AWS CDK and Typescript](https://spoofing.medium.com/deploying-an-aws-client-vpn-endpoint-with-aws-cdk-and-typescript-355f9db60a9d?source=rss-f81a86e26f17------2)
-- [Deploying applications to ECS Fargate with AWS CDK and Typescript](https://spoofing.medium.com/deploying-applications-to-ecs-fargate-with-aws-cdk-and-typescript-c0b5acdcb1d7?source=rss-f81a86e26f17------2)
 <!-- BLOG-POST-LIST:END -->
 
 ## 🌐 Socials:
