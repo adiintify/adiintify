@@ -1,6 +1,6 @@
 <h1>Hi 👋, I'm Aditya Nama</h1>
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=500&pause=1000&color=E08E0B&vCenter=true&width=435&lines=Security+Engineer-+II+%40Nykaa;AWS+Community+Builder" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com/?font=Poppins&weight=500&pause=1000&color=E08E0B&vCenter=true&width=435&lines=Cybersecurity+Engineer;AWS+Community+Builder" alt="Typing SVG" /></a>
 
 ## <a href="https://aws.amazon.com/developer/community/community-builders/community-builders-directory/?cb-cards.sort-by=item.additionalFields.cbName&cb-cards.sort-order=asc&awsf.builder-category=*all&awsf.location=*all&awsf.year=*all&cb-cards.q=aditya%2Bnama&cb-cards.q_operator=AND">AWS Community Builders Directory | Worldwide Cloud Community (amazon.com)</a>
 
@@ -13,6 +13,7 @@
 ## Medium Blogs posts:
 
 <!-- BLOG-POST-LIST:START -->
+
 - [Automating IP Blocking on Cloudflare with a Slack Bot](https://spoofing.medium.com/automating-ip-blocking-on-cloudflare-with-a-slack-bot-7f1509465fdf?source=rss-f81a86e26f17------2)
 - [Leveraging CloudWatch Synthetics for Proactive Incident Response](https://spoofing.medium.com/leveraging-cloudwatch-synthetics-for-proactive-incident-response-fc51abf9d814?source=rss-f81a86e26f17------2)
 - [Deploying Jenkins using AWS CDK and Typescript](https://spoofing.medium.com/deploying-jenkins-using-aws-cdk-and-typescript-732ec26e10a?source=rss-f81a86e26f17------2)
