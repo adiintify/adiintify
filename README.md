@@ -8,7 +8,7 @@
 
 - 💬 Ask me about **AWS CDK, Cloud Security & Application Security**
 
-- 🔑 Use free <a href="https://www.adityanama.com/"><button>Password Generator</button></a>
+- 🔑 Use free <a href="https://www.adityanama.com/password_generator/"><button>Password Generator</button></a>
 
 ## ✍️ Latest Blog Posts
 
