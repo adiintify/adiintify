@@ -2,6 +2,8 @@
 
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com/?font=Poppins&weight=500&pause=1000&color=E08E0B&vCenter=true&width=435&lines=Cybersecurity+Engineer;AWS+Community+Builder" alt="Typing SVG" /></a>
 
+- 👦🏻 To know more about me, <a href="https://adityanama.com">visit my website</a>.
+
 - 🌐 Visit <a href="https://shorturl.at/Bx9Bk">AWS Community Builders Directory</a>
 
 - 🌱 I’m currently learning **Everything About Security!**
@@ -13,6 +15,7 @@
 ## ✍️ Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
+
 - [Automating IP Blocking on Cloudflare with a Slack Bot](https://spoofing.medium.com/automating-ip-blocking-on-cloudflare-with-a-slack-bot-7f1509465fdf?source=rss-f81a86e26f17------2)
 - [Leveraging CloudWatch Synthetics for Proactive Incident Response](https://spoofing.medium.com/leveraging-cloudwatch-synthetics-for-proactive-incident-response-fc51abf9d814?source=rss-f81a86e26f17------2)
 - [Deploying Jenkins using AWS CDK and Typescript](https://spoofing.medium.com/deploying-jenkins-using-aws-cdk-and-typescript-732ec26e10a?source=rss-f81a86e26f17------2)
