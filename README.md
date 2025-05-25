@@ -2,8 +2,8 @@
 
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com/?font=Montserrat&weight=500&pause=1000&color=E08E0B&vCenter=true&width=435&lines=Senior+Security+Engineer+at+Flipkart" alt="Typing SVG" /></a>
 
-- 🧪 Always building & learning | 🧠 Curious by default
-
+- 🧠 Curious by default
+- 🧪 Always building & learning
 - 💬 Ask me about **Layer 7 Security, Cloud & Application Security, or AWS CDK**
 
 ## 📚 Featured Blog Posts
