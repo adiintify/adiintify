@@ -65,8 +65,4 @@
 
 ---
 
-<p align="left">
-  <a href="https://visitcount.itsvg.in">
-    <img src="https://visitcount.itsvg.in/api?id=adiintify&icon=0&color=0" alt="Profile Views" />
-  </a>
-</p>
+![](https://komarev.com/ghpvc/?username=adiintify&style=flat-square)
