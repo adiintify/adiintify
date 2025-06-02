@@ -1,27 +1,18 @@
-// Matrix background effect
+// Matrix background effect (no changes here)
 var canvas = document.querySelector("canvas"),
   ctx = canvas.getContext("2d");
 
-// Setting the width and height of the canvas
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-
-// Setting up the letters
 var letters =
   "ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ";
 letters = letters.split("");
-
-// Setting up the columns
 var fontSize = 10,
   columns = canvas.width / fontSize;
-
-// Setting up the drops
 var drops = [];
 for (var i = 0; i < columns; i++) {
   drops[i] = 1;
 }
-
-// Setting up the draw function
 function draw() {
   ctx.fillStyle = "rgba(0, 0, 0, .1)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -35,11 +26,7 @@ function draw() {
     }
   }
 }
-
-// Loop the animation
 setInterval(draw, 33);
-
-// Adjust canvas size on window resize
 window.addEventListener("resize", function () {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -50,8 +37,9 @@ window.addEventListener("resize", function () {
   }
 });
 
+// Keep track of how many times each option was clicked
 let selectionCount = {
-  about: 0,
+  passwordGenerator: 0,
   contact: 0,
   work: 0,
   skills: 0,
@@ -72,132 +60,205 @@ function reply(option) {
 
   let message = "";
   switch (option) {
+    case "passwordGenerator":
+      message = `
+        <p>🔐 Redirecting you to the world’s strongest, most unpredictable passwords…</p>
+        <p><i>Remember: a password is like toothpaste—once it’s out, you can’t stuff it back in the tube.</i></p>
+      `;
+      setTimeout(function () {
+        window.location.href = "../password_generator/";
+      }, 1200);
+      break;
+
     case "contact":
       message = `
-          <ul>
-            <li>Email: <i>complex@duck.com</i></li>
-            <li>Phone: <i>+91-9876543210</i></li>
-          </ul>
-          <p><i>This is a fake mobile number, nice try! But don’t worry, the email is legit—unless my evil twin set this up.</i></p>`;
+        <ul>
+          <li>Email: <i>complex@duck.com</i> (PGP key available upon request.)</li>
+          <li>Phone: <i>+91-9876543210</i> (Only open to secure networked calls, naturally.)</li>
+        </ul>
+        <p><i>Pro Tip: If you get a weird email from “me” asking for your SSH keys… it’s not me! Stay suspicious. 🕵️‍♂️</i></p>
+      `;
       if (selectionCount.contact > 1) {
-        message += `<p><i>Security Tip: Always watch your back. I could be tracking you... just kidding! Or am I?</i></p>`;
+        message += `
+          <p><i>Security Tip #${selectionCount.contact}:</i> Even I can't find my own backup of that phone number. Be careful who you trust!</p>
+        `;
       }
       break;
+
     case "work":
       message = `
-            <p><b>Nykaa - Senior Security Engineer <i>(Dec 2022- July 2024)</i></b></p>
-            <ul>
-            <li><i>Configuring and managing Cloudflare for various web applications, monitoring and analyzing traffic patterns to identify potential security threats or performance issues, implementing firewall rules, DDoS protection, and other security measures.</i></li>
-            <li><i>Designing and implementing cloud custodian policies to enforce compliance and governance requirements across cloud resources and automating cloud resource provisioning and deprovisioning workflows.</i></li>
-            <li><i>Configuring and managing AWS security controls, including IAM, organizations, SSO, VPC, S3, EC2, RDS, ELB, CloudTrail, Config, Inspector, GuardDuty, WAF, and more.</i></li>
-            <li><i>Collaborating with cross-functional teams, including DevOps and network engineers, to design and implement secure cloud architectures.</i></li>
-            <li><i>Developing and maintaining security incident response plans and procedures to effectively respond to security incidents and breaches.</i></li>
-          </ul>
-            <p><b>Great Learning - Senior Security Operations Engineer <i>(Jan 2021- December 2022)</i></b></p>
-            <ul>
-            <li><i>Security implementation from the ground up.</i></li>
-            <li><i>Helped team in reproducing, triaging, and addressing application security vulnerabilities.</i></li>
-            <li><i>Wrote comprehensive reports including assessment-based findings, outcomes, and propositions for further system security enhancement.</i></li>
-            <li><i>Developed technical solutions and new security tools to help mitigate security vulnerabilities and automate repeatable tasks.</i></li>
-            <li><i>Built complex application stacks from the scratch utilizing Infrastructure as Code with the AWS Cloud Development Kit to minimize human error, future proofing, and enable quick deployment for disaster recovery.</i></li>
-            <li><i>Deployed Incident Response and Alerting with AWS CloudWatch, AWS CloudTrail, AWS Config, Amazon Inspector, Amazon GuardDuty, and AWS Security Hub.</i></li>
-            <li><i>Deployment and maintenance of AWS WAF for all apps, as well as designing WAF rules to counter risks like the OWASP Top 10, known bad inputs, and bot control.</i></li>
-            <li><i>Deployment and maintenance of security awareness trainings to reduce human risks for our organization.</i></li>
-            <li><i>Designed and integrated endpoint protection solutions into the organization's infrastructure based on the business requirements.</i></li>
-            <li><i>Evaluated internal controls based on various security standards (ISO 270001, SOC 2, NIST Cybersecurity Framework).</i></li>
-          </ul>
-            <p><b>eSec Forte® Technologies - Information Security Consultant <i>(Jan 2019- Dec 2020)</i></b></p>
-            <ul>            
-            <li><i>Performed manual and automated dynamic grey-box security testing and remediation testing on a wide range of web and native mobile-based applications hosted in multiple pre-prod environments.</i></li>
-            <li><i>Provided approval for applications to be released into a production environment based on the severity of open vulnerabilities in the application environment and the intended remediation date.</i></li>
-            <li><i>Finding the root cause of security vulnerabilities in the source code, prioritized the critical issues, and provided detailed guidance on how to fix them so developers can resolve issues in less time with the help of Micro Focus Fortify Static Code Analyzer.</i></li>
-            <li><i>Built mechanisms to ensure that all services, applications, and tools are secure throughout the software development lifecycle.</i></li>
-            <li><i>Managed Security Scorecard and BitSight Security ratings to monitor the integrity of the infrastructure by keeping tabs on the configuration of outdated browsers, operating systems, expired FTP services, and weak or expired certificates.</i></li>
-          </ul>`;
+        <p><b>Nykaa - Senior Security Engineer <i>(Dec 2022 – Jul 2024)</i></b></p>
+        <ul>
+          <li><i>Built and deployed WAF rules to block malicious bots—like “if your user-agent is suspicious, I will see you later.”</i></li>
+          <li><i>Set up DDoS protection so strong, the bots now fear me. They call me “DDoS Slayer.”</i></li>
+          <li><i>Automated Cloud Custodian policies—think of them as “cloud bouncers” that check IDs before anything can enter.🚪</i></li>
+          <li><i>Integrated AWS Security Hub so thoroughly, hackers now send me thank-you cookies… ironically.</i></li>
+        </ul>
+        <p><b>Great Learning - Senior Security Operations Engineer <i>(Jan 2021 – Dec 2022)</i></b></p>
+        <ul>
+          <li><i>Built detection pipelines that flagged suspicious logins—yes, I once blocked myself by mistake trying to log in from a different coffee shop. ☕️🔒</i></li>
+          <li><i>Created automated phishing simulators. My coworkers hated me—until they realized they were outsmarting my fake emails! </i></li>
+          <li><i>Deployed AWS WAF rules that prevented bad inputs—SQLi, XSS, you name it; now the webapp is practically bulletproof. (Well… as bulletproof as JavaScript allows.)</i></li>
+          <li><i>Designed incident response flows that ran in less than 5 minutes—“We Got Pwned?” Not on my watch. 🕒</i></li>
+        </ul>
+        <p><b>eSec Forte Technologies - InfoSec Consultant <i>(Jan 2019 – Dec 2020)</i></b></p>
+        <ul>
+          <li><i>Conducted dynamic grey-box testing on clients’ apps; once I found a critical bug in a shopping cart—turns out the cart could subtract money from the customer’s account! 😱</i></li>
+          <li><i>Helped triage and fix OWASP Top 10 issues—yes, that includes “why is your login form still vulnerable to brute force?”</i></li>
+          <li><i>Built secure CI/CD pipelines that refused to merge any code with “password123” in it—everyone cried, then learned to code better. </i></li>
+        </ul>
+      `;
       break;
+
     case "skills":
       message = `
-          <ul>
-            <li>Programming: <i>TypeScript, JavaScript, Python, SQL</i></li>
-            <li>Security Tools: <i>Burpsuite, SQLmap, Nexpose, Nessus, Wireshark, Metasploit, Nmap</i></li>
-            <li>Security Solutions: <i>IBM QRadar, ARCOS, F-Secure/Trend Micro, Forti DB</i></li>
-            <li>Operating Systems: <i>Windows, Linux, Macintosh</i></li>
-            <li>Adobe Creative Suite: <i>Photoshop, Lightroom, Premiere Pro, After Effects, Illustrator</i></li>
-          </ul>`;
+        <ul>
+          <li>Programming: <i>TypeScript, JavaScript, Python, SQL</i> (I can script a quick pentest in under 5 seconds.)</li>
+          <li>Security Tools: <i>Burp Suite, SQLmap, Nessus, Wireshark, Metasploit, Nmap</i> (My Kali VM is my BFF.)</li>
+          <li>Cloud Security: <i>AWS IAM, WAF, GuardDuty, CloudCustodian</i> (I binge-watch AWS logs for fun.)</li>
+          <li>Infra: <i>Terraform, Docker, Linux</i> (If it’s got “sudo” I’m in.)</li>
+          <li>Scripting & Automation: <i>Bash, PowerShell, AWS CLI</i> (Yes, I once automated a toaster—security is for everything.)</li>
+        </ul>
+      `;
       break;
+
     case "certifications":
       message = `
-          <ul>
-            <li>AWS Certified Cloud Practitioner <i>(Jan 2022 - Jan 2025)</i></li>
-            <li>AWS Certified Security – Specialty <i>(Sep 2023 - Sep 2026)</i></li>
-          </ul>`;
+        <ul>
+          <li>AWS Certified Cloud Practitioner <i>(Jan 2022 – Jan 2025)</i> <b>✓</b></li>
+          <li>AWS Certified Security – Specialty <i>(Sep 2023 – Sep 2026)</i> <b>✓</b></li>
+          <li>Offensive Security Certified Professional (OSCP) <i>(coming soon… or is it?)</i></li>
+        </ul>
+        <p><i>Fun Fact: When you type “certificate” in a terminal, it’s pronounced “certify or die trying.”</i></p>
+      `;
       break;
+
     case "projects":
       message = `
-          <ul>
-            <li>Session Monitor using Raspberry Pi <i>- This project involves using a Raspberry Pi Zero to monitor the internet traffic of a locked Windows machine running version 7 or below. The Raspberry Pi emulates an Ethernet device over USB and hijacks all internet traffic from the locked machine.</i></li>
-            <li>USB Intruder <i>- This device is Arduino-based and can be used for offensive security goals such as installing backdoors, stealing documents, and capturing credentials.</i></li>
-            <li>Secure Text Transfer using Diffie-Hellman Key Exchange <i>- This project involves using the Diffie-Hellman key exchange algorithm to securely transfer text between two parties over a cloud-based platform. The Diffie-Hellman key exchange algorithm is a cryptographic protocol that allows two parties to establish a shared secret over an insecure communication channel.</i></li>
-          </ul>`;
+        <ul>
+          <li><b>Session Monitor on Raspberry Pi:</b> Hijacked my own locked Windows 7 machine’s internet traffic—ethical purposes only, I swear! 🤖🔌</li>
+          <li><b>USB Intruder:</b> Raspberry Pi + Arduino device that looks like a flash drive. Can deliver payloads, capture creds… but let’s not do that without permission, okay? 🖥️💾</li>
+          <li><b>Secure Text Transfer with Diffie-Hellman:</b> Built a little chat app that never sees your plaintext. If someone online intercepts, they get nothing but gibberish.🔒📡</li>
+          <li><b>Aditya’s AI Bot Scanner:</b> Proof of concept that runs a Burp-like spider on suspicious domains—basically my “neo-Matrix” for URL reconnaissance. 💀🕷️</li>
+        </ul>
+      `;
       break;
+
     case "education":
       message = `
-          <ul>
-            <li><i>Bachelor of Technology in </i>Computer Science and Engineering <i>from </i>NITRA Technical Campus, Dr. A.P.J. Abdul Kalam Technical University</li>
-          </ul>`;
+        <ul>
+          <li><i>B.Tech. in Computer Science & Engineering</i><br />(NITRA Technical Campus, Dr. A.P.J. Abdul Kalam Technical Univ.)</li>
+          <li><i>Online: SANS SEC560 – Network Penetration Testing & Ethical Hacking</i></li>
+          <li><i>Coursera: Cryptography I & II (Stanford Univ.)</i></li>
+        </ul>
+        <p><i>Note: I once tried to “hack” my own diploma to say “Master of Secrets”—the registrar was not amused. 🎓🔍</i></p>
+      `;
       break;
+
     case "community":
       message = `
-          <ul>
-            <li>AWS Community Builder <i>(Mar 2023 - Present)</i></li>
-            <li>BBWIC Foundation: <i>Community and Development Board Coordinator (Mar 2024 - Present)</i></li>
-            <li>DEF CON Delhi Group DC 9111: <i>Core Team - Video Editor (Jun 2020 - Present)</i></li>
-            <li>NULLCON & BSIDES DELHI: <i>Volunteer</i></li>
-            <li>Rotaract Club of Capital City New Delhi: <i>Treasurer (Jul 2018-19)</i></li>
-          </ul>`;
+        <ul>
+          <li>AWS Community Builder <i>(Mar 2023 – Present)</i> (I teach AWS to anyone who will listen—and secretly lecture my toaster.)</li>
+          <li>DEF CON Delhi Group DC 9111: <i>Core Team – Video Editor (Jun 2020 – Present)</i> (I edited a talk on “Lockpicking for Hackers,” and yes, I got busted by airport security.)</li>
+          <li>NULLCON & BSides Delhi: <i>Volunteer</i> (If you saw me wearing a black hoodie, I was definitely not hacking you. Maybe.)</li>
+          <li>Rotaract Club of Capital City New Delhi: <i>Treasurer (Jul 2018 – Jul 2019)</i> (I kept our books so secure, not even I could find them later.)</li>
+        </ul>
+      `;
       break;
+
     case "github":
-      message = `<p>Check out my GitHub: <a href="https://github.com/adiintify" target="_blank">https://github.com/adiintify</a></p>`;
+      message = `
+        <p>
+          👀 Check out my GitHub (fork at your own risk):<br />
+          <a href="https://github.com/adiintify" target="_blank"
+            >https://github.com/adiintify</a
+          >
+        </p>
+        <p><i>Pro Tip: Don’t clone any repo without verifying the author’s PGP signature. 🧑‍💻🔐</i></p>
+      `;
       break;
+
     case "linkedin":
-      message = `<p>Connect with me on LinkedIn: <a href="https://www.linkedin.com/in/adiintify/" target="_blank">https://www.linkedin.com/in/adiintify/</a></p>`;
+      message = `
+        <p>
+          🔗 Connect over LinkedIn (I promise not to HR-stalk you)—<br />
+          <a href="https://www.linkedin.com/in/adiintify/" target="_blank"
+            >https://www.linkedin.com/in/adiintify/</a
+          >
+        </p>
+        <p><i>Security Tip: Never give out your LinkedIn password to recruiters. They only need your profile link. 😉</i></p>
+      `;
       break;
+
     case "medium":
-      message = `<p>Read my articles on Medium: <a href="https://spoofing.medium.com/" target="_blank">https://spoofing.medium.com/</a></p>`;
+      message = `
+        <p>
+          ✍️ Read my infosec articles on Medium:<br />
+          <a href="https://spoofing.medium.com/" target="_blank"
+            >https://spoofing.medium.com/</a
+          >
+        </p>
+        <p><i>My latest post: “How to Build a Bot That Scares Hackers… and Maybe Yourself.”</i></p>
+      `;
       break;
+
     case "credly":
-      message = `<p>View my certifications on Credly: <a href="https://www.credly.com/users/adiintify/badges" target="_blank">https://www.credly.com/users/adiintify/badges</a></p>`;
+      message = `
+        <p>
+          📜 See my badges on Credly—<br />
+          <a href="https://www.credly.com/users/adiintify/badges" target="_blank"
+            >https://www.credly.com/users/adiintify/badges</a
+          >
+        </p>
+        <p><i>All my badges are stored in an encrypted vault… until you click that link. 😁</i></p>
+      `;
       break;
+
     case "holopin":
-      message = `<p>Explore my badges on Holopin: <a href="https://www.holopin.io/@adiintify#badges" target="_blank">https://www.holopin.io/@adiintify#badges</a></p>`;
+      message = `
+        <p>
+          🎫 Explore my Holopin security badges—<br />
+          <a href="https://www.holopin.io/@adiintify#badges" target="_blank"
+            >https://www.holopin.io/@adiintify#badges</a
+          >
+        </p>
+        <p><i>Who needs physical flair when you have digital badges that blink? ✨</i></p>
+      `;
       break;
+
     case "twitter":
-      message = `<p>Follow me on Twitter: <a href="https://twitter.com/adiintify" target="_blank">https://twitter.com/adiintify</a></p>`;
-      break;
-    case "passwordGenerator":
-      message = "<p>Redirecting you to the Password Generator...</p>";
-      setTimeout(function () {
-        window.location.href = "password_generator/";
-      }, 1000); // Redirect after 2 seconds
+      message = `
+        <p>
+          🐦 Follow my security rants on Twitter—<br />
+          <a href="https://twitter.com/adiintify" target="_blank"
+            >https://twitter.com/adiintify</a
+          >
+        </p>
+        <p><i>Warning: I live-tweet my pen tests. You’ve been warned. 🔥</i></p>
+      `;
       break;
 
     default:
-      message = "<p>I am not sure about that.</p>";
+      message = `<p><i>🤖 I have no idea what “${option}” means. Are you trying to exploit me?</i></p>`;
+      break;
   }
 
-  // Adding humor for repeated selections
-  if (selectionCount[option] > 1 && option !== "contact") {
-    message += `<p><i>Are you trying to hack me? You've already asked about ${option} ${selectionCount[option]} times!</i></p>`;
+  // Add extra humor if user clicks the same option repeatedly
+  if (selectionCount[option] > 1 && option !== "passwordGenerator") {
+    message += `
+      <p><i>🔁 You’ve asked for <b>${option}</b> ${selectionCount[option]} times. 
+         Are you running automated queries on me? Well, nice try—but I’m watching!</i></p>
+    `;
   }
 
   displayMessage(message);
 }
 
 function displayMessage(message) {
-  const messageContainer = document.createElement("div");
-  messageContainer.classList.add("chatbot-message");
-  messageContainer.innerHTML = message;
-  document.getElementById("chatbotMessages").appendChild(messageContainer);
-  document.getElementById("chatbotMessages").scrollTop =
-    document.getElementById("chatbotMessages").scrollHeight;
+  const container = document.createElement("div");
+  container.classList.add("chatbot-message");
+  container.innerHTML = message;
+  const chatLog = document.getElementById("chatbotMessages");
+  chatLog.appendChild(container);
+  chatLog.scrollTop = chatLog.scrollHeight;
 }

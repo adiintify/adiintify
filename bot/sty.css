@@ -1,33 +1,39 @@
-/* Resetting margin and padding */
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+
+:root {
+  --main-color: #0f0;
+  --bg-color: #000;
+  --card-bg: #111;
+  --font: "Press Start 2P", monospace;
+}
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Ensure padding and border are included in width/height */
+  box-sizing: border-box; /* Include padding/border in element’s width/height */
 }
 
-/* Canvas should cover the entire screen */
+body {
+  background-color: var(--bg-color);
+  color: var(--main-color);
+  font-family: var(--font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden; /* Hide any page‐level scrollbars */
+}
+
+/* Matrix Canvas sits behind everything */
 canvas {
   display: block;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1; /* Send canvas behind other content */
+  z-index: -1;
 }
 
-/* Overall Body Styles */
-body {
-  font-family: "Press Start 2P", cursive;
-  background: #000;
-  color: #00ff00;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  overflow: hidden; /* Prevent scrollbars */
-}
-
-/* Chatbot Container */
+/* Chatbot container */
 .chatbot-container {
   width: 90%;
   max-width: 800px;
@@ -38,10 +44,10 @@ body {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  max-height: 90vh; /* Prevent the container from exceeding the viewport height */
+  max-height: 90vh; /* Prevent container from exceeding viewport */
 }
 
-/* Chatbot Header */
+/* Header */
 .chatbot-header {
   background-color: #0d0d0d;
   padding: 10px;
@@ -59,37 +65,41 @@ body {
   margin-right: 10px;
 }
 
-/* Chatbot Messages */
+.chatbot-header h2 {
+  font-family: var(--font);
+}
+
+/* Message area */
 .chatbot-messages {
   padding: 15px;
   flex-grow: 1;
   overflow-y: auto;
   border-bottom: 1px solid #00ff00;
-  font-size: 14px; /* Slightly larger for better readability */
+  font-size: 14px; /* Slightly larger for readability */
+  font-family: var(--font);
+  color: var(--main-color);
+  background-color: #0d0d0d;
 }
 
-/* Chatbot Message Styles */
 .chatbot-message {
   margin-bottom: 10px;
   padding: 15px;
   background-color: #0d0d0d;
   border-left: 4px solid #00ff00;
-  font-family: "Press Start 2P", cursive;
+  font-family: var(--font);
   color: #00ff00;
-  line-height: 1.6; /* Improved readability */
+  line-height: 1.6;
 }
 
-/* List Styles */
 .chatbot-message ul {
   padding-left: 20px;
-  list-style-type: disc; /* Disc bullets */
+  list-style-type: disc;
 }
 
 .chatbot-message li {
-  margin-bottom: 8px; /* Space between items */
+  margin-bottom: 8px;
 }
 
-/* Emphasize Important Points */
 .chatbot-message b {
   color: #00ff00;
 }
@@ -98,15 +108,14 @@ body {
   color: #cccccc;
 }
 
-/* Chatbot Options */
+/* ===== Chatbot Options ===== */
 .chatbot-options {
   padding: 10px;
   text-align: center;
   display: flex;
-  flex-wrap: wrap; /* Make buttons wrap on smaller screens */
+  flex-wrap: wrap; /* Allow buttons to wrap on multiple lines */
   justify-content: center;
-  overflow-y: auto;
-  max-height: 250px; /* Constrain the height of options area */
+  /* Removed overflow-y and max-height so all buttons stay visible */
 }
 
 .chatbot-options button {
@@ -117,109 +126,53 @@ body {
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
-  font-family: "Press Start 2P", cursive;
+
+  /* Ensure the same “Press Start 2P” font is used */
+  font-family: var(--font);
+  font-size: 0.8rem; /* Slightly increased so it remains legible */
+  text-transform: none;
+  letter-spacing: normal;
   flex-grow: 1;
-  min-width: 120px;
-  width: 100%; /* Full-width buttons */
+  min-width: 140px;
 }
 
-/* Button Hover Effect */
-chatbot-options button:hover {
+.chatbot-options button:hover {
   background-color: #00ff00;
   color: #0f0f0f;
 }
 
-/* Responsive Adjustments */
+/* Make sure even on very small widths, buttons stack neatly */
 @media only screen and (max-width: 600px) {
-  .chatbot-container {
-    width: 100%;
-    height: 100vh;
-    border-radius: 0; /* Remove border-radius on small screens for full screen effect */
-  }
-
-  .chatbot-messages {
-    height: 50vh; /* Reduced height for smaller screens */
-    padding: 10px;
-  }
-
-  .chatbot-message {
-    font-size: 12px;
-    padding: 10px;
-  }
-
   .chatbot-options {
-    max-height: 40vh; /* Allow more room for buttons on smaller screens */
+    justify-content: center;
   }
-
   .chatbot-options button {
-    width: 100%; /* Full-width buttons on small screens */
+    width: 100%;
     margin: 5px 0;
   }
 }
 
-/* Social Links */
-.social-links {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.social-links a {
-  color: #00ff00;
-  text-decoration: none;
-  margin: 0 10px;
-  font-family: "Press Start 2P", cursive;
-  font-size: 14px;
-}
-
-.social-links a:hover {
-  color: #0f0f0f;
-  background-color: #00ff00;
-  padding: 2px 5px;
-  border-radius: 5px;
-}
-
-/* Improved Scrollbar Styles */
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: #1a1a1a;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #00ff00;
-  border-radius: 6px;
-  border: 3px solid #1a1a1a;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #00cc00;
-}
-
-.chatbot-messages::-webkit-scrollbar,
-.chatbot-options::-webkit-scrollbar {
+/* Scrollbar styling for chat messages */
+.chatbot-messages::-webkit-scrollbar {
   width: 10px;
 }
 
-.chatbot-messages::-webkit-scrollbar-thumb,
-.chatbot-options::-webkit-scrollbar-thumb {
+.chatbot-messages::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb {
   background-color: #00ff00;
   border-radius: 6px;
   border: 2px solid #1a1a1a;
 }
 
-.chatbot-messages::-webkit-scrollbar-thumb:hover,
-.chatbot-options::-webkit-scrollbar-thumb:hover {
+.chatbot-messages::-webkit-scrollbar-thumb:hover {
   background-color: #00cc00;
 }
 
+/* Firefox scrollbar */
 .chatbot-messages {
-  scrollbar-width: thin;
-  scrollbar-color: #00ff00 #1a1a1a;
-}
-
-.chatbot-options {
   scrollbar-width: thin;
   scrollbar-color: #00ff00 #1a1a1a;
 }
