@@ -11,7 +11,6 @@
 ## 📚 Featured Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
-
 - [Automating IP Blocking on Cloudflare with a Slack Bot](https://spoofing.medium.com/automating-ip-blocking-on-cloudflare-with-a-slack-bot-7f1509465fdf?source=rss-f81a86e26f17------2)
 - [Leveraging CloudWatch Synthetics for Proactive Incident Response](https://spoofing.medium.com/leveraging-cloudwatch-synthetics-for-proactive-incident-response-fc51abf9d814?source=rss-f81a86e26f17------2)
 - [Deploying Jenkins using AWS CDK and Typescript](https://spoofing.medium.com/deploying-jenkins-using-aws-cdk-and-typescript-732ec26e10a?source=rss-f81a86e26f17------2)
