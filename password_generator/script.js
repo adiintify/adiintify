@@ -1,55 +1,63 @@
-// Function to generate and display a password
-function generateAndDisplayPassword(event) {
-  if (event) event.preventDefault(); // Prevent the form from submitting
+// DOM elements
+const passwordDisplay = document.getElementById("passwordDisplay");
+const copyBtn = document.getElementById("copyBtn");
+const lengthSlider = document.getElementById("lengthSlider");
+const lengthValue = document.getElementById("lengthValue");
+const resetBtn = document.getElementById("resetBtn");
 
-  let characterAmount = document.getElementById("characterAmountNumber").value;
-  const customCharacterSet =
-    document.getElementById("customCharacterSet").value;
+const includeUppercase = document.getElementById("includeUppercase");
+const includeLowercase = document.getElementById("includeLowercase");
+const includeNumbers = document.getElementById("includeNumbers");
+const includeSymbols = document.getElementById("includeSymbols");
+const includeSpaces = document.getElementById("includeSpaces");
+const customCharacterSet = document.getElementById("customCharacterSet");
 
-  let includeUppercase = document.getElementById("includeUppercase").checked;
-  let includeLowercase = document.getElementById("includeLowercase").checked;
-  let includeNumbers = document.getElementById("includeNumbers").checked;
-  let includeSymbols = document.getElementById("includeSymbols").checked;
-  let includeSpaces = document.getElementById("includeSpaces").checked;
-  let excludeSimilarCharacters = document.getElementById(
-    "excludeSimilarCharacters"
-  ).checked;
-  let excludeAmbiguousCharacters = document.getElementById(
-    "excludeAmbiguousCharacters"
-  ).checked;
-  let includeLeetSpeak = document.getElementById("includeLeetSpeak").checked;
-  const randomizeLength = document.getElementById("randomizeLength").checked;
-  const camelCase = document.getElementById("camelCase").checked;
-  const kebabCase = document.getElementById("kebabCase").checked;
+const excludeSimilarCharacters = document.getElementById(
+  "excludeSimilarCharacters"
+);
+const excludeAmbiguousCharacters = document.getElementById(
+  "excludeAmbiguousCharacters"
+);
+const includeLeetSpeak = document.getElementById("includeLeetSpeak");
+const randomizeLength = document.getElementById("randomizeLength");
+const noRepeatCharacters = document.getElementById("noRepeatCharacters");
 
-  // Uncheck and disable other options if custom character set is provided
-  if (customCharacterSet && customCharacterSet.length > 0) {
-    includeUppercase =
-      includeLowercase =
-      includeNumbers =
-      includeSymbols =
-      includeSpaces =
-      excludeSimilarCharacters =
-      excludeAmbiguousCharacters =
-      includeLeetSpeak =
-        false;
+const camelCase = document.getElementById("camelCase");
+const kebabCase = document.getElementById("kebabCase");
 
-    document.getElementById("includeUppercase").checked = false;
-    document.getElementById("includeLowercase").checked = false;
-    document.getElementById("includeNumbers").checked = false;
-    document.getElementById("includeSymbols").checked = false;
-    document.getElementById("includeSpaces").checked = false;
-    document.getElementById("excludeSimilarCharacters").checked = false;
-    document.getElementById("excludeAmbiguousCharacters").checked = false;
-    document.getElementById("includeLeetSpeak").checked = false;
-  }
+const form = document.getElementById("passwordGeneratorForm");
 
-  if (randomizeLength) {
-    characterAmount = Math.floor(Math.random() * (50 - 10 + 1)) + 10; // Random length between 10 and 50
-  }
+// Similar and ambiguous sets
+const similarChars = "il1Lo0O";
+const ambiguousChars = "{}[]/\\'\"`~,;:.<>";
 
-  const password = generatePassword(
-    characterAmount,
+// Default settings
+const defaults = {
+  length: 10,
+  includeUppercase: true,
+  includeLowercase: true,
+  includeNumbers: true,
+  includeSymbols: true,
+  includeSpaces: true,
+  customSet: "",
+  excludeSimilar: true,
+  excludeAmbiguous: true,
+  includeLeet: false,
+  randomize: false,
+  noRepeat: false,
+  camel: false,
+  kebab: false,
+};
+
+// Update length display on slider change
+lengthSlider.addEventListener("input", () => {
+  lengthValue.textContent = lengthSlider.value;
+});
+
+// Disable/enable other options when custom set exists
+customCharacterSet.addEventListener("input", () => {
+  const hasCustom = customCharacterSet.value.trim().length > 0;
+  const disables = [
     includeUppercase,
     includeLowercase,
     includeNumbers,
@@ -58,83 +66,189 @@ function generateAndDisplayPassword(event) {
     excludeSimilarCharacters,
     excludeAmbiguousCharacters,
     includeLeetSpeak,
-    customCharacterSet
-  );
-
-  let formattedPassword = formatPassword(password, camelCase, kebabCase);
-
-  document.getElementById("passwordDisplay").innerText = formattedPassword;
-}
-
-// Function to generate a password
-function generatePassword(
-  characterAmount,
-  includeUppercase,
-  includeLowercase,
-  includeNumbers,
-  includeSymbols,
-  includeSpaces,
-  excludeSimilarCharacters,
-  excludeAmbiguousCharacters,
-  includeLeetSpeak,
-  customCharacterSet
-) {
-  let charset = "";
-
-  // Use custom character set if provided, otherwise build the charset based on options
-  if (customCharacterSet && customCharacterSet.length > 0) {
-    charset = customCharacterSet;
-  } else {
-    if (includeUppercase) charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    if (includeLowercase) charset += "abcdefghijklmnopqrstuvwxyz";
-    if (includeNumbers) charset += "0123456789";
-    if (includeSymbols) charset += "!@#$%^&*()_+~`|}{[]\\:;?><,./-=";
-    if (includeSpaces) charset += " ";
-  }
-
-  let password = "";
-  for (let i = 0; i < characterAmount; i++) {
-    const randomIndex = Math.floor(Math.random() * charset.length);
-    password += charset[randomIndex];
-  }
-
-  return password;
-}
-
-// Function to format the password
-function formatPassword(password, camelCase, kebabCase) {
-  if (camelCase) {
-    return password
-      .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
-        return index === 0 ? word.toLowerCase() : word.toUpperCase();
-      })
-      .replace(/\s+/g, "");
-  } else if (kebabCase) {
-    return password.replace(/\s+/g, "-").toLowerCase();
-  } else {
-    return password;
-  }
-}
-
-// Automatically generate and display a password when the page loads
-window.onload = generateAndDisplayPassword;
-
-// Ensure password is copied to the clipboard when clicking on the password display
-document
-  .getElementById("passwordDisplay")
-  .addEventListener("click", function () {
-    const password = document.getElementById("passwordDisplay").textContent;
-    navigator.clipboard
-      .writeText(password)
-      .then(() => {
-        alert("Password copied to clipboard!");
-      })
-      .catch(() => {
-        alert("Failed to copy password!");
-      });
+  ];
+  disables.forEach((el) => {
+    if (hasCustom) {
+      el.checked = false;
+      el.disabled = true;
+    } else {
+      el.disabled = false;
+    }
   });
+});
 
-// Add event listener to the form to prevent default submit behavior
-document
-  .getElementById("passwordGeneratorForm")
-  .addEventListener("submit", generateAndDisplayPassword);
+// Reset to default settings
+resetBtn.addEventListener("click", () => {
+  lengthSlider.value = defaults.length;
+  lengthValue.textContent = defaults.length;
+
+  includeUppercase.checked = defaults.includeUppercase;
+  includeLowercase.checked = defaults.includeLowercase;
+  includeNumbers.checked = defaults.includeNumbers;
+  includeSymbols.checked = defaults.includeSymbols;
+  includeSpaces.checked = defaults.includeSpaces;
+  customCharacterSet.value = defaults.customSet;
+
+  excludeSimilarCharacters.checked = defaults.excludeSimilar;
+  excludeAmbiguousCharacters.checked = defaults.excludeAmbiguous;
+  includeLeetSpeak.checked = defaults.includeLeet;
+  randomizeLength.checked = defaults.randomize;
+  noRepeatCharacters.checked = defaults.noRepeat;
+
+  camelCase.checked = defaults.camel;
+  kebabCase.checked = defaults.kebab;
+
+  // Re-enable if they were disabled
+  [
+    includeUppercase,
+    includeLowercase,
+    includeNumbers,
+    includeSymbols,
+    includeSpaces,
+    excludeSimilarCharacters,
+    excludeAmbiguousCharacters,
+    includeLeetSpeak,
+  ].forEach((el) => (el.disabled = false));
+
+  generateAndDisplayPassword();
+});
+
+// Generate + display on form submit or on load
+form.addEventListener("submit", generateAndDisplayPassword);
+window.addEventListener("load", generateAndDisplayPassword);
+
+// Copy to clipboard (with textarea fallback for very long strings)
+copyBtn.addEventListener("click", () => {
+  const pwd = passwordDisplay.textContent;
+  if (!pwd || pwd.includes("*")) return; // nothing to copy yet
+
+  // First, try the modern Clipboard API:
+  navigator.clipboard
+    .writeText(pwd)
+    .then(() => {
+      copyBtn.textContent = "Copied!";
+      setTimeout(() => (copyBtn.textContent = "Copy"), 1000);
+    })
+    .catch(() => {
+      // Fallback: use a hidden textarea if Clipboard API fails
+      const tmp = document.createElement("textarea");
+      tmp.value = pwd;
+      // Place it offscreen:
+      tmp.style.position = "fixed";
+      tmp.style.top = "-9999px";
+      document.body.appendChild(tmp);
+      tmp.select();
+      try {
+        document.execCommand("copy");
+        copyBtn.textContent = "Copied!";
+      } catch {
+        copyBtn.textContent = "Failed";
+      }
+      document.body.removeChild(tmp);
+      setTimeout(() => (copyBtn.textContent = "Copy"), 1000);
+    });
+});
+
+function generateAndDisplayPassword(e) {
+  if (e) e.preventDefault();
+
+  // Determine length
+  let length = parseInt(lengthSlider.value, 10);
+  if (randomizeLength.checked) {
+    length = Math.floor(Math.random() * (64 - 4 + 1)) + 4;
+    lengthSlider.value = length;
+    lengthValue.textContent = length;
+  }
+
+  // Build charset
+  let charset = "";
+  const customSetVal = customCharacterSet.value.trim();
+  if (customSetVal.length > 0) {
+    charset = customSetVal;
+  } else {
+    if (includeUppercase.checked) charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    if (includeLowercase.checked) charset += "abcdefghijklmnopqrstuvwxyz";
+    if (includeNumbers.checked) charset += "0123456789";
+    if (includeSymbols.checked) charset += "!@#$%^&*()_+~`|}{[]\\:;?><,./-=";
+    if (includeSpaces.checked) charset += " ";
+  }
+
+  // Exclude similar or ambiguous
+  if (excludeSimilarCharacters.checked) {
+    charset = Array.from(charset)
+      .filter((c) => !similarChars.includes(c))
+      .join("");
+  }
+  if (excludeAmbiguousCharacters.checked) {
+    charset = Array.from(charset)
+      .filter((c) => !ambiguousChars.includes(c))
+      .join("");
+  }
+
+  // If charset is empty, fallback to lowercase
+  if (charset.length === 0) {
+    charset = "abcdefghijklmnopqrstuvwxyz";
+  }
+
+  // Generate password (no repeat if chosen)
+  let pwd = "";
+  if (noRepeatCharacters.checked && length <= charset.length) {
+    // shuffle and take first `length`
+    const shuffled = shuffleArray(Array.from(charset));
+    pwd = shuffled.slice(0, length).join("");
+  } else {
+    for (let i = 0; i < length; i++) {
+      const idx = Math.floor(Math.random() * charset.length);
+      pwd += charset[idx];
+    }
+  }
+
+  // Leet speak transformation
+  if (includeLeetSpeak.checked) {
+    pwd = toLeet(pwd);
+  }
+
+  // Case formatting (camel/kebab)
+  if (camelCase.checked) {
+    pwd = pwd
+      .split(/[\s_-]+/)
+      .map((word, i) => {
+        if (i === 0) return word.toLowerCase();
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      })
+      .join("");
+  } else if (kebabCase.checked) {
+    pwd = pwd.replace(/\s+/g, "-").toLowerCase();
+  }
+
+  // Update display
+  passwordDisplay.textContent = pwd;
+}
+
+// Utility: shuffle array (Fisher–Yates)
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// Utility: simple Leet substitutions
+function toLeet(text) {
+  const map = {
+    a: "4",
+    A: "4",
+    e: "3",
+    E: "3",
+    i: "1",
+    I: "1",
+    o: "0",
+    O: "0",
+    s: "5",
+    S: "5",
+    t: "7",
+    T: "7",
+  };
+  return text.replace(/[AEIOSTaeiost]/g, (c) => map[c] || c);
+}

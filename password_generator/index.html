@@ -2,132 +2,117 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Password Generator</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        .form-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-        .form-table td {
-            padding: 0.5rem;
-            vertical-align: top;
-        }
+    <!-- Retro Font -->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
-        .form-table label {
-            font-weight: bold;
-        }
-
-        .form-table small {
-            display: block;
-            font-size: 0.8rem;
-            color: #888;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
 </head>
 
 <body>
     <div class="container">
         <h1 class="title blink">Password Generator</h1>
-        <h3 class="password-display" id="passwordDisplay">***************</h3>
 
+        <!-- Display + Copy -->
+        <div class="password-area">
+            <h3 class="password-display" id="passwordDisplay">************</h3>
+            <button id="copyBtn" class="copy-btn" title="Copy to clipboard">
+                Copy
+            </button>
+        </div>
+
+        <!-- Form -->
         <form id="passwordGeneratorForm" class="form">
-            <table class="form-table">
-                <tr>
-                    <td>
-                        <label for="characterAmountNumber">Number Of Characters</label>
-                    </td>
-                    <td><input class="number-input" type="number" min="1" max="50" value="10"
-                            id="characterAmountNumber"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="includeUppercase">Include Uppercase</label>
-                    </td>
-                    <td><input type="checkbox" id="includeUppercase" checked></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="includeLowercase">Include Lowercase</label>
-                    </td>
-                    <td><input type="checkbox" id="includeLowercase" checked></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="includeNumbers">Include Numbers</label>
-                    </td>
-                    <td><input type="checkbox" id="includeNumbers" checked></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="includeSymbols">Include Symbols</label>
-                    </td>
-                    <td><input type="checkbox" id="includeSymbols" checked></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="includeSpaces">Include Spaces</label>
-                    </td>
-                    <td><input type="checkbox" id="includeSpaces" checked></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="excludeSimilarCharacters">Exclude Similar Characters</label>
-                        <small>(e.g., 'i', 'l', '1', 'I')</small>
-                    </td>
-                    <td><input type="checkbox" id="excludeSimilarCharacters" checked></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="excludeAmbiguousCharacters">Exclude Ambiguous Characters</label>
-                        <small>(e.g., '{', '}', '[', ']')</small>
-                    </td>
-                    <td><input type="checkbox" id="excludeAmbiguousCharacters" checked></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="includeLeetSpeak">Include Leet Speak</label>
-                        <small>(Convert letters to numbers in a leet-style substitution)</small>
-                    </td>
-                    <td><input type="checkbox" id="includeLeetSpeak" checked></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="randomizeLength">Randomize Length</label>
-                        <small>(Generate a password with a random length between 10 and 50 characters)</small>
-                    </td>
-                    <td><input type="checkbox" id="randomizeLength"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="camelCase">Camel Case</label>
-                        <small>(Format the password in camelCase, e.g., superSecurePassword)</small>
-                    </td>
-                    <td><input type="checkbox" id="camelCase"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="kebabCase">Kebab Case</label>
-                        <small>(Format the password in kebab-case, e.g., super-secure-password)</small>
-                    </td>
-                    <td><input type="checkbox" id="kebabCase"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="customCharacterSet">Custom Character Set</label>
-                        <small>(Specify a custom set of characters to use for generating the password)</small>
-                    </td>
-                    <td><input type="text" id="customCharacterSet" placeholder="e.g., ABC123!@#"></td>
-                </tr>
-            </table>
+            <!-- Length slider -->
+            <div class="form-row">
+                <label for="lengthSlider">
+                    Length: <span id="lengthValue">10</span>
+                </label>
+                <input type="range" id="lengthSlider" min="4" max="64" value="10" />
+            </div>
 
-            <button type="submit" class="btn">Generate Password</button>
+            <!-- Character‐set options -->
+            <fieldset class="fieldset">
+                <legend>Character Sets</legend>
+
+                <div class="form-row">
+                    <input type="checkbox" id="includeUppercase" checked />
+                    <label for="includeUppercase">Uppercase (A-Z)</label>
+                </div>
+                <div class="form-row">
+                    <input type="checkbox" id="includeLowercase" checked />
+                    <label for="includeLowercase">Lowercase (a-z)</label>
+                </div>
+                <div class="form-row">
+                    <input type="checkbox" id="includeNumbers" checked />
+                    <label for="includeNumbers">Numbers (0-9)</label>
+                </div>
+                <div class="form-row">
+                    <input type="checkbox" id="includeSymbols" checked />
+                    <label for="includeSymbols">Symbols (!@#$%)</label>
+                </div>
+                <div class="form-row">
+                    <input type="checkbox" id="includeSpaces" checked />
+                    <label for="includeSpaces">Spaces</label>
+                </div>
+
+                <div class="form-row">
+                    <input type="text" id="customCharacterSet" placeholder="Custom set (e.g. ABC123!@#)" />
+                    <label for="customCharacterSet">Custom Character Set</label>
+                </div>
+            </fieldset>
+
+            <!-- Exclusions & Extras -->
+            <fieldset class="fieldset">
+                <legend>Exclusions & Extras</legend>
+
+                <div class="form-row">
+                    <input type="checkbox" id="excludeSimilarCharacters" checked />
+                    <label for="excludeSimilarCharacters">Exclude Similar (i, l, 1, I, o, 0)</label>
+                </div>
+                <div class="form-row">
+                    <input type="checkbox" id="excludeAmbiguousCharacters" checked />
+                    <label for="excludeAmbiguousCharacters">Exclude Ambiguous ({ } [ ] / \ ' " ` ~ , ; : . <>)</label>
+                </div>
+                <div class="form-row">
+                    <input type="checkbox" id="includeLeetSpeak" />
+                    <label for="includeLeetSpeak">Leet Speak (E→3, A→4)</label>
+                </div>
+                <div class="form-row">
+                    <input type="checkbox" id="randomizeLength" />
+                    <label for="randomizeLength">Randomize Length (4–64)</label>
+                </div>
+                <div class="form-row">
+                    <input type="checkbox" id="noRepeatCharacters" />
+                    <label for="noRepeatCharacters">No Repeat Chars</label>
+                </div>
+            </fieldset>
+
+            <!-- Case Formatting -->
+            <fieldset class="fieldset">
+                <legend>Case Formatting</legend>
+
+                <div class="form-row">
+                    <input type="checkbox" id="camelCase" />
+                    <label for="camelCase">Camel Case</label>
+                </div>
+                <div class="form-row">
+                    <input type="checkbox" id="kebabCase" />
+                    <label for="kebabCase">Kebab Case</label>
+                </div>
+            </fieldset>
+
+            <div class="buttons-row">
+                <button type="submit" class="btn">Generate</button>
+                <button type="button" id="resetBtn" class="btn secondary">
+                    Reset Defaults
+                </button>
+            </div>
         </form>
     </div>
 </body>
