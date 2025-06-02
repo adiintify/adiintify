@@ -5,6 +5,8 @@
 - 🧠 Curious by default
 - 🧪 Always building & learning
 - 💬 Ask me about **Layer 7 Security, Cloud & Application Security, or AWS CDK**
+- 🤖 [Adiintify Bot](https://adiintify.com/bot/) – Fun interactive chatbot about me
+- 🔐 [Password Generator](https://adiintify.com/password_generator/) – Secure password generator with full customization
 
 ## 📚 Featured Blog Posts
 

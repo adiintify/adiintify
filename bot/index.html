@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adiintify Bot</title>
+    <link rel="stylesheet" href="sty.css">
+    <link rel="icon" href="bot.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <img src="bot.png" alt="Bot Icon" class="bot-icon">
+            <h2>Adiintify</h2>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="chatbot-message">
+                Welcome to Adiintify BOT! If you want to know more about Aditya, select any options below. And remember,
+                the bot has its eyes on you! 👀
+            </div>
+        </div>
+        <div class="chatbot-options">
+            <!-- <button onclick="reply('passwordGenerator')">Use Password Generator</button> -->
+            <button onclick="reply('contact')">Contact Information</button>
+            <button onclick="reply('work')">Work Experience</button>
+            <button onclick="reply('skills')">Skills</button>
+            <button onclick="reply('certifications')">Certifications</button>
+            <button onclick="reply('projects')">Projects</button>
+            <button onclick="reply('education')">Education</button>
+            <button onclick="reply('community')">Community Contributions</button>
+            <button onclick="reply('github')">GitHub</button>
+            <button onclick="reply('linkedin')">LinkedIn</button>
+            <button onclick="reply('medium')">Medium</button>
+            <button onclick="reply('credly')">Credly</button>
+            <button onclick="reply('holopin')">Holopin</button>
+            <button onclick="reply('twitter')">Twitter</button>
+        </div>
+    </div>
+    <script src="scc.js"></script>
+</body>
+
+</html>
